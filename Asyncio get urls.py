@@ -52,7 +52,7 @@ async def main():
     # The main async function
     n = 1     #start counting at page number n on immoweb url below
     session = Session()
-    tasks = [scrape_list_of_houses(session, f"https://www.immoweb.be/en/search/house-and-apartment/for-sale?countries=BE&isAPublicSale=false&isALifeAnnuitySale=false&page={n + i}&orderBy=relevance") for i in range(150)] #repeat i times
+    tasks = [scrape_list_of_houses(session, f"https://www.immoweb.be/en/search/house-and-apartment/for-sale?countries=BE&isAPublicSale=false&isALifeAnnuitySale=false&page={n + i}&orderBy=relevance") for i in range(5)] #repeat i times
     await asyncio.gather(*tasks)
 
 

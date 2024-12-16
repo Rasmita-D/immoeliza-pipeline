@@ -2,6 +2,7 @@ import asyncio
 import time
 import requests
 from requests import Session
+import pandas as pd
 from bs4 import BeautifulSoup
 import re
 
@@ -85,7 +86,7 @@ async def scrape_house(url):
             price = house_info['Price'].split()
             for n in price:
                 if n[0].isdigit():
-                    house['price'] = "€" + n
+                    house['price'] = n
         except:
             house['Price'] = None
 
@@ -113,7 +114,6 @@ async def scrape_house(url):
         # Add surface of the plot to the dictionary
         if 'Surface of the plot' in house_info:
             surface_area = house_info['Surface of the plot'].split()[0]
-            surface_area += ' m²'
             house['Surface of the plot'] = surface_area
         else:
             house['Surface of the plot'] = None
@@ -121,7 +121,6 @@ async def scrape_house(url):
         # Add living area to house dictionary
         if 'Living area' in house_info:
             area = house_info['Living area'].split()[0]
-            area += ' m²'
             house['Living area'] = area
         else:
             house['Living area'] = None
@@ -157,7 +156,6 @@ async def scrape_house(url):
         # Add Terrace area to the house dictionary
         if 'Terrace surface' in house_info:
             area = house_info['Terrace surface'].split()[0]
-            area += ' m²'
             house['Terrace'] = area
         else:
             house['Terrace'] = None
@@ -165,7 +163,6 @@ async def scrape_house(url):
         # Add Garden area to the house dictionary
         if 'Garden surface' in house_info:
             garden = house_info['Garden surface'].split()[0]
-            garden += ' m²'
             house['Garden'] = garden
         else: 
             house['Garden'] = None 
@@ -211,7 +208,7 @@ async def scrape_house(url):
                 energy_consumption = house_info['Primary energy consumption'].split()
                 for n in energy_consumption:
                     if n[0].isdigit():
-                        house['Primary energy consumption'] = n + ' kWh/m²'            
+                        house['Primary energy consumption'] = n            
         else:
             house['Primary energy consumption'] = None
         
@@ -238,7 +235,7 @@ async def scrape_house(url):
             cadastral_income = house_info['Cadastral income'].split()
             for n in cadastral_income:
                 if n[0].isdigit():
-                    house['cadastral_income'] = "€" + n
+                    house['cadastral_income'] = n
         else:
             house['cadastral_income'] = None
             
@@ -257,7 +254,7 @@ async def main():
     # the main async function
     tasks = []
 
-    for n in list_houses[0:]:  # Limit to n number of houses from the houses_urls.txt file
+    for n in list_houses[0:]:  # Limit to n number of houses from the items.txt file
         tasks.append(scrape_house(n))
     await asyncio.gather(*tasks)
 
