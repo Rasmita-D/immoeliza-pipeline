@@ -149,9 +149,9 @@ def main():
     return X_train, X_test, y_train, y_test
 
 X_train, X_test, y_train, y_test=main()
-X_train.to_csv('./data/X_train.csv')
-X_test.to_csv('./data/X_test.csv')
-y_train.to_csv('./data/y_train.csv')
-y_test.to_csv('./data/y_test.csv')
+X_train['price']=y_train
+X_test['price']=y_test
+X_train.to_csv('./data/train.csv')
+X_test.to_csv('./data/test.csv')
 
 
