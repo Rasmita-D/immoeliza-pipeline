@@ -7,6 +7,7 @@ from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 from pandas.api.types import is_numeric_dtype
 from sklearn.model_selection import train_test_split
+from datetime import date
 
 def clean_initial():
     df=pd.read_csv('./data/sample.csv')
@@ -80,7 +81,7 @@ def pre_process_train(df,price):
 
     # Drop the original categorical columns
     df = df.drop(categorical_columns, axis=1)
-
+    df['Construction year']=date.today().year-df['Construction year']
     df = df.drop(['price'], axis=1)
     
     return df
@@ -136,6 +137,7 @@ def pre_process_test(df):
     # Drop the original categorical columns
     df = df.drop(categorical_columns, axis=1)
 
+    df['Construction year']=date.today().year-df['Construction year']
     
     return df
 

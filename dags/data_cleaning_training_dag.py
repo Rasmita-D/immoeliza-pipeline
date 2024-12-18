@@ -101,6 +101,7 @@ def pre_process_train(df,price):
     df = df.drop(categorical_columns, axis=1)
 
     df = df.drop(['price'], axis=1)
+    df['Construction year']=date.today().year-df['Construction year']
     
     return df
 
@@ -154,7 +155,7 @@ def pre_process_test(df):
 
     # Drop the original categorical columns
     df = df.drop(categorical_columns, axis=1)
-
+    df['Construction year']=date.today().year-df['Construction year']
     
     return df
 
