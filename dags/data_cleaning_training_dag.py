@@ -9,6 +9,14 @@ from pandas.api.types import is_numeric_dtype
 from sklearn.model_selection import train_test_split
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from pathlib import Path
+from datetime import date
+
+this_day=date.today()
+
+repo_root = Path(__file__).resolve().parent.parent
+data_folder = repo_root / 'data'
+utils_folder=repo_root / 'utils'
 
 dag = DAG(                                                     
    dag_id="data_cleaning_training",                                          
@@ -18,8 +26,9 @@ dag = DAG(
 }
 )
 
+
 def clean_initial():
-    df=pd.read_csv('./data/sample.csv')
+    df=pd.read_csv(data_folder/'sample.csv')
     df=df.drop(['Locality name','Subtype of property','Surface of the plot', 'Garden orientation','Energy class'],axis=1)
     df=df.drop_duplicates(subset=['Property ID'])
     return df
@@ -44,7 +53,7 @@ def pre_process_train(df,price):
     df['State of builing']=df['State of builing'].fillna('0')
     state_encoder = OrdinalEncoder(categories=[['0','To restore','To renovate','To be done up','Good','Just renovated','As new']])
     df['State of builing']=state_encoder.fit_transform(df[['State of builing']])
-    joblib.dump(state_encoder,'./utils/state_building_ordinal.pkl')
+    joblib.dump(state_encoder,utils_folder/'state_building_ordinal.pkl')
     #Replace missing with nan to impute later
     df['State of builing']=df['State of builing'].replace(0.0,np.nan)
 
@@ -52,7 +61,7 @@ def pre_process_train(df,price):
     df['kitchen']=df['kitchen'].fillna('0')
     encoder = OrdinalEncoder(categories=[['0','Not installed','1','Installed','Semi equipped','Hyper equipped']])
     df['kitchen']=encoder.fit_transform(df[['kitchen']])
-    joblib.dump(encoder,'./utils/kitchen_ordinal.pkl')
+    joblib.dump(encoder,utils_folder/'kitchen_ordinal.pkl')
     #Replace missing with nan to impute later
     df['kitchen']=df['kitchen'].replace(0.0,np.nan)
 
@@ -82,7 +91,7 @@ def pre_process_train(df,price):
     categorical_columns=['Postal code','Type of property','Heating type']
     ohencoder = OneHotEncoder(drop='first',sparse_output=False,handle_unknown='ignore')
     one_hot_encoded = ohencoder.fit_transform(df[categorical_columns])
-    joblib.dump(ohencoder,'./utils/one_hot.pkl')
+    joblib.dump(ohencoder,utils_folder/'one_hot.pkl')
     one_hot_df = pd.DataFrame(one_hot_encoded, columns=ohencoder.get_feature_names_out(categorical_columns))
 
     # Concatenate the one-hot encoded dataframe with the original dataframe
@@ -110,7 +119,7 @@ def pre_process_test(df):
 
     #Encoding the state of building field
     df['State of builing']=df['State of builing'].fillna('0')
-    state_encoder = joblib.load(filename='./utils/state_building_ordinal.pkl')
+    state_encoder = joblib.load(filename=utils_folder/'state_building_ordinal.pkl')
     df['State of builing']=state_encoder.transform(df[['State of builing']])
 
     #Replace missing with nan to impute later
@@ -118,7 +127,7 @@ def pre_process_test(df):
 
     #Encoding kitchen data
     df['kitchen']=df['kitchen'].fillna('0')
-    encoder = joblib.load('./utils/kitchen_ordinal.pkl')
+    encoder = joblib.load(utils_folder/'kitchen_ordinal.pkl')
     df['kitchen']=encoder.transform(df[['kitchen']])
 
     #Replace missing with nan to impute later
@@ -136,7 +145,7 @@ def pre_process_test(df):
 
     #One hot encoding nominal fields-prop type, sub prop type, locality
     categorical_columns=['Postal code','Type of property','Heating type']
-    ohencoder = joblib.load('./utils/one_hot.pkl')
+    ohencoder = joblib.load(utils_folder/'one_hot.pkl')
     one_hot_encoded = ohencoder.transform(df[categorical_columns])
     one_hot_df = pd.DataFrame(one_hot_encoded, columns=ohencoder.get_feature_names_out(categorical_columns))
 
@@ -158,8 +167,8 @@ def main():
     X_test=pre_process_test(X_test)
     X_train['price']=y_train
     X_test['price']=y_test
-    X_train.to_csv('./data/train.csv')
-    X_test.to_csv('./data/test.csv')
+    X_train.to_csv(data_folder/f'train-{this_day}.csv')
+    X_test.to_csv(data_folder/f'test-{this_day}.csv')
 
  
 get_data = PythonOperator(                                
