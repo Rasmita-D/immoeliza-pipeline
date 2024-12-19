@@ -1,40 +1,83 @@
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta, date
 import asyncio
-import time
-import requests
-from requests import Session
-import pandas as pd
 from bs4 import BeautifulSoup
 import re
+from requests import Session
+import pandas as pd
+from pathlib import Path
+import os
 
-'''
-This file is to scrape the urls of the induvidual houses 
-using Asyncio to speed things up
-It adds the scraped data in a houses.csv file
-'''
+# Default arguments for the DAG
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=1),
+}
 
-# Read the houses in the "items.txt" file and add them in a list
-list_houses = []
-f = open("houses_urls.txt", "r")
-for line in f:
-    list_houses.append(line)
+repo_root = Path(__file__).resolve().parent
+data_folder = repo_root / 'data'
 
-async def scrape_house(url):
-    '''
-    An async function to scrape the house url
-    '''
-    # Set up custom headers
 
+# Function to scrape URLs
+async def scrape_list_of_houses(session, url):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+    }
     try:
-        # setup BeautifulSoup
-        headers = requests.utils.default_headers()
-        headers.update({
+        response = session.get(url, headers=headers)
+        soup = BeautifulSoup(response.content, "html.parser")
+        await asyncio.sleep(0.1)
+
+        list_url = []
+        for elem in soup.find_all('a', class_="card__title-link"):
+            match_type = re.search(r'/([^/]+)/for-sale', str(elem))
+            type_house = match_type.group(1) if match_type else None
+            if type_house in ['apartment', 'house']:
+                list_url.append(elem.get("href"))
+
+        today = date.today()
+        file_path = data_folder/f"houses_urls_{today}.txt"
+        with open(file_path, 'a') as file:
+            for item in list_url:
+                file.write(item + "\n")
+        return list_url
+    except Exception as e:
+        print(f"Error scraping {url}: {e}")
+        return []
+
+# Wrapper for URL scraping
+async def scrape_urls_main():
+    base_url = "https://www.immoweb.be/en/search/house-and-apartment/for-sale?countries=BE&page={page}&orderBy=relevance"
+    num_pages = 5
+    session = Session()
+    tasks = [scrape_list_of_houses(session, base_url.format(page=page)) for page in range(1, num_pages + 1)]
+    await asyncio.gather(*tasks)
+
+def run_async_scraper():
+    asyncio.run(scrape_urls_main())
+
+# Function to read house URLs
+def read_house_urls():
+    today = date.today()
+    file_path = data_folder/f"houses_urls_{today}.txt"
+    with open(file_path, "r") as f:
+        return [line.strip() for line in f]
+
+# Async function to scrape house details
+async def scrape_house(url):
+    try:
+        headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
-            })
+        }
         session = Session()
         response = session.get(url, headers=headers)
         soup = BeautifulSoup(response.content, "html.parser")
-        
-        # Scrapes table content with tag 'th' from the webpage and adds it to a list
+# Scrapes table content with tag 'th' from the webpage and adds it to a list
         list_keys = []
         for elem in soup.find_all('th', class_="classified-table__header"):
             text = " ".join([str(item) for item in elem.contents])
@@ -245,22 +288,37 @@ async def scrape_house(url):
         data= []
         data.append(house)
         df = pd.DataFrame(data)
-        df.to_csv('houses_data.csv', mode='a', index=False, header=False)
+        today = date.today()
+        path = os.environ.get('AIRFLOW_HOME', '/opt/airflow')
+        df.to_csv(data_folder/f"houses_data_{today}.csv", mode='a', index=False, header=False)
     except:
         print("An exception occurred")
 
-
-async def main():
-    # the main async function
-    tasks = []
-
-    for n in list_houses[0:]:  # Limit to n number of houses from the items.txt file
-        tasks.append(scrape_house(n))
-    await asyncio.gather(*tasks)
-
-# Run the main program and display how long it took to run the program
-if __name__ == "__main__":
-    s = time.perf_counter()
+def scrape_houses():
+    list_houses = read_house_urls()
+    async def main():
+        tasks = [scrape_house(url) for url in list_houses]
+        await asyncio.gather(*tasks)
     asyncio.run(main())
-    elapsed = time.perf_counter() - s
-    print(f"{__file__} executed in {elapsed:0.2f} seconds.")
+
+# Define the DAG
+with DAG(
+    'scrape_and_process_houses_path_testing',
+    default_args=default_args,
+    description='Scrape house URLs and details using asyncio',
+    schedule_interval='0 2 * * *',  # Daily at 2 AM
+    start_date=datetime(2024, 1, 1),
+    catchup=False,
+) as dag:
+
+    scrape_urls_task = PythonOperator(
+        task_id='scrape_urls',
+        python_callable=run_async_scraper,
+    )
+
+    scrape_houses_task = PythonOperator(
+        task_id='scrape_houses',
+        python_callable=scrape_houses,
+    )
+
+    scrape_urls_task >> scrape_houses_task
