@@ -1,0 +1,72 @@
+,Property ID,Postal code,price,Type of property,Construction year,Number of rooms,Living area,kitchen,furnished,Open fire,Terrace,Garden,Number of facades,Swimming pool,State of builing,Primary energy consumption,Heating type,Flood zone type,Double glazing,cadastral_income
+0,20394069,3300,184000,apartment,1972.0,2.0,81.0,1,,,22.0,,4.0,,To renovate,202.0,Gas,Non flood zone,Yes,755.0
+1,20393142,9400,299000,apartment,2006.0,3.0,153.0,Installed,,,6.0,,2.0,,Good,92.0,Fuel oil,Non flood zone,Yes,1054.0
+2,20393714,9600,465000,house,1962.0,4.0,389.0,Hyper equipped,,1.0,22.0,650.0,4.0,,To be done up,175.0,Gas,Non flood zone,Yes,1971.0
+3,20394068,1000,210000,apartment,2013.0,1.0,59.0,Installed,1.0,,3.0,,2.0,,Good,234.0,Electric,Possible flood zone,Yes,920.0
+4,20394202,2300,299000,apartment,2006.0,3.0,114.0,Semi equipped,,,4.0,,,,Good,147.0,Gas,Non flood zone,Yes,
+5,20393411,2000,498500,apartment,2017.0,2.0,129.0,Hyper equipped,0.0,,10.0,1400.0,,,As new,61.0,Gas,Non flood zone,Yes,1190.0
+6,20391562,2170,155000,apartment,1968.0,1.0,73.0,Semi equipped,,,11.0,,2.0,,To be done up,187.0,Gas,Non flood zone,,793.0
+7,20393997,1060,265000,apartment,1960.0,2.0,63.0,Not installed,,,,,2.0,0.0,Just renovated,419.0,,Non flood zone,,
+8,20393133,9500,384000,apartment,1969.0,3.0,252.0,Installed,,,,,2.0,,Good,184.0,Gas,Non flood zone,Yes,775.0
+9,20392783,9600,465000,house,1992.0,4.0,324.0,Hyper equipped,0.0,,20.0,340.0,3.0,0.0,Good,170.0,Gas,Non flood zone,Yes,1290.0
+10,20394238,3700,490000,house,2003.0,4.0,406.0,1,,,,390.0,4.0,,As new,126.0,Fuel oil,Non flood zone,Yes,1144.0
+11,20394236,8434,370000,apartment,1991.0,2.0,74.0,Installed,1.0,,,,,,Good,167.0,Electric,Non flood zone,Yes,989.0
+12,20394234,8200,339000,house,1932.0,2.0,140.0,,,,,,4.0,,Good,392.0,,,Yes,453.0
+13,20394232,8400,198000,apartment,1999.0,2.0,75.0,Installed,,,,,3.0,0.0,Good,220.0,Electric,Non flood zone,Yes,991.0
+14,20394231,8500,245000,house,,3.0,140.0,,,,,,2.0,,As new,184.0,Gas,Non flood zone,Yes,550.0
+15,20394230,8500,495000,house,1952.0,3.0,160.0,,,,,,3.0,,As new,291.0,Gas,Non flood zone,Yes,999.0
+16,20394225,3350,349000,house,1988.0,3.0,121.0,1,,,25.0,450.0,4.0,,As new,358.0,Fuel oil,Non flood zone,Yes,743.0
+17,20388825,8620,750000,apartment,2023.0,3.0,117.0,Installed,,,49.0,,2.0,,,30.0,,Non flood zone,Yes,
+18,20394217,8620,695000,apartment,2023.0,2.0,81.0,Installed,,,21.0,,2.0,,,30.0,,Non flood zone,Yes,
+19,20394219,8620,695000,apartment,2023.0,2.0,75.0,Installed,,,19.0,,2.0,,,30.0,,Non flood zone,Yes,
+20,20388828,8620,1350000,apartment,2023.0,3.0,138.0,Installed,,,172.0,,2.0,,,30.0,,Non flood zone,Yes,
+21,20388826,8620,790000,apartment,2023.0,3.0,120.0,Installed,,,52.0,,2.0,,,30.0,,Non flood zone,Yes,
+22,20394221,8620,715000,apartment,2023.0,3.0,140.0,Installed,,,55.0,300.0,2.0,,,30.0,,Non flood zone,Yes,
+23,20394218,8620,595000,apartment,2023.0,2.0,91.0,Installed,,,40.0,,2.0,,,30.0,,Non flood zone,Yes,
+24,20394215,8620,350000,apartment,2023.0,1.0,73.0,Installed,,,11.0,25.0,2.0,,,30.0,,Non flood zone,Yes,
+25,20394214,9050,295000,apartment,1949.0,2.0,87.0,1,,,10.0,,2.0,,As new,349.0,Gas,Non flood zone,Yes,
+26,20394210,9820,450000,house,,3.0,141.0,,,,16.0,,3.0,,As new,96.0,Gas,Non flood zone,Yes,
+27,20394208,8790,289000,apartment,2019.0,2.0,82.0,,,,14.0,,,,As new,48.0,Gas,Non flood zone,Yes,1031.0
+29,20394201,4100,319000,house,1977.0,3.0,130.0,Semi equipped,0.0,,16.0,960.0,4.0,0.0,Good,210.0,,Non flood zone,Yes,
+30,20394198,8930,165000,house,,2.0,135.0,Installed,0.0,,,104.0,2.0,0.0,Good,345.0,Gas,Possible flood zone,Yes,
+31,20394196,8400,168000,apartment,1969.0,3.0,100.0,Installed,,,1.0,,2.0,0.0,Good,304.0,Gas,Non flood zone,Yes,788.0
+32,20393939,1040,345000,apartment,1956.0,2.0,100.0,Semi equipped,0.0,,,,2.0,0.0,To be done up,314.0,Gas,Non flood zone,Yes,1321.0
+33,20393802,1060,599000,house,1910.0,5.0,253.0,Semi equipped,0.0,,,48.0,2.0,0.0,To renovate,226.0,,Non flood zone,Yes,2082.0
+34,20390100,2300,135000,apartment,1966.0,2.0,106.0,Semi equipped,,,,,2.0,,To renovate,394.0,Gas,Non flood zone,Yes,743.0
+35,20389564,2100,269000,apartment,1980.0,2.0,92.0,Semi equipped,,,3.0,,2.0,,As new,90.0,Gas,Non flood zone,Yes,1070.0
+36,20389851,2970,665000,apartment,2002.0,1.0,165.0,Installed,,,11.0,,2.0,,Good,104.0,Gas,Non flood zone,Yes,
+37,20394076,9200,195000,apartment,1976.0,3.0,97.0,,,,,,2.0,,Good,156.0,Gas,Non flood zone,Yes,
+38,20392611,8400,229000,apartment,,2.0,88.0,1,0.0,,5.0,90.0,,,Good,192.0,,Non flood zone,,659.0
+39,20392698,9600,239000,apartment,2007.0,2.0,100.0,Installed,,,,,,,Good,92.0,Gas,Non flood zone,Yes,
+40,20393572,2640,259000,apartment,1994.0,2.0,74.0,Installed,,,,,3.0,,Good,236.0,Gas,Non flood zone,Yes,
+41,20393194,1030,260000,apartment,1963.0,2.0,90.0,Not installed,0.0,,8.0,,2.0,0.0,To renovate,160.0,Gas,Non flood zone,Yes,
+42,20393659,1600,285000,apartment,1980.0,3.0,88.0,Semi equipped,,,,,,,To be done up,332.0,Gas,,,1100.0
+43,20388045,2650,205000,apartment,1987.0,2.0,76.0,1,0.0,,3.0,,3.0,,Good,231.0,Gas,Non flood zone,Yes,631.0
+44,20388829,2530,315000,apartment,2008.0,2.0,90.0,Installed,,,7.0,,,,Good,97.0,Gas,Non flood zone,Yes,1799.0
+45,20393143,9500,299999,house,1938.0,3.0,235.0,Installed,,,,895.0,2.0,,Good,375.0,Fuel oil,Non flood zone,Yes,575.0
+46,20394193,2300,248000,house,1933.0,2.0,225.0,,,,,,3.0,,To renovate,,Gas,,Yes,
+47,20394188,9000,299000,apartment,,2.0,86.0,,0.0,,,,,,Just renovated,161.0,Gas,Non flood zone,Yes,661.0
+48,20381677,8300,1000000,house,,2.0,144.0,,,,,,,,Good,,,,,
+49,20394181,3700,299950,house,1977.0,,140.0,,1.0,,,,,,,259.0,,Non flood zone,Yes,
+50,20394180,6240,179000,house,,3.0,206.0,,,,,,2.0,,As new,358.0,,,,416.0
+51,20394172,6040,260000,house,,4.0,200.0,Hyper equipped,0.0,,60.0,,2.0,0.0,As new,340.0,Gas,,Yes,700.0
+52,20394169,8000,595000,apartment,,2.0,,,,,,,,,Good,175.0,,,,
+53,20394157,2845,379000,house,1959.0,3.0,165.0,Hyper equipped,,,,,2.0,,,193.0,Gas,Non flood zone,Yes,
+54,20394154,8430,249700,house,2012.0,3.0,80.0,Installed,1.0,,,,,,Good,453.0,,Non flood zone,Yes,683.0
+55,20394151,1020,115000,apartment,,1.0,35.0,Semi equipped,0.0,,,,2.0,0.0,To renovate,355.0,Gas,Non flood zone,Yes,294.0
+56,20394152,1020,150000,apartment,1913.0,1.0,65.0,Semi equipped,1.0,,2.0,,2.0,,Good,272.0,Electric,Non flood zone,Yes,
+57,20394149,3200,279000,house,,2.0,100.0,Installed,0.0,,,,,,Good,244.0,Gas,,,305.0
+58,20394144,2140,235000,apartment,1930.0,2.0,76.0,Installed,0.0,,,,,,Good,209.0,Gas,Non flood zone,Yes,569.0
+59,20394141,2610,345000,apartment,1975.0,3.0,150.0,Hyper equipped,0.0,,7.0,,2.0,0.0,As new,239.0,Gas,Non flood zone,Yes,1462.0
+60,20394134,9000,445000,house,1899.0,3.0,165.0,Installed,,,,,,,Good,323.0,Gas,Non flood zone,Yes,456.0
+61,20394130,3000,499000,house,1971.0,4.0,211.0,Installed,0.0,,,,2.0,,To be done up,325.0,Gas,,Yes,1212.0
+62,20394123,7730,99000,apartment,1980.0,1.0,52.0,Semi equipped,0.0,,,,2.0,0.0,Good,462.0,Gas,Non flood zone,Yes,
+63,20394122,3360,625000,house,2023.0,4.0,213.0,Hyper equipped,0.0,,,,,,Good,29.0,Electric,,Yes,
+64,20390590,8450,219000,apartment,1965.0,2.0,66.0,1,0.0,,4.0,,,,Good,193.0,Fuel oil,Non flood zone,Yes,622.0
+65,20391690,8500,349000,apartment,2010.0,2.0,110.0,Installed,,,8.0,,2.0,,Good,98.0,Gas,Non flood zone,Yes,1165.0
+66,20380875,6900,399000,house,1907.0,5.0,255.0,Installed,,,,672.0,3.0,,Good,203.0,Fuel oil,Non flood zone,,1018.0
+67,20393404,9090,278000,apartment,1997.0,2.0,96.0,Installed,0.0,,8.0,,,,Good,88.0,Gas,Non flood zone,Yes,1098.0
+68,20393440,8300,699000,apartment,2005.0,2.0,102.0,Installed,,,,,2.0,,Good,68.0,Gas,Non flood zone,Yes,1299.0
+69,20393713,9600,750000,apartment,2009.0,2.0,426.0,Hyper equipped,,,10.0,35.0,2.0,,Good,85.0,Gas,,Yes,4079.0
+70,20394098,1501,310000,apartment,2022.0,1.0,78.0,,,,15.0,,,,As new,36.0,Gas,Non flood zone,Yes,850.0
+71,20394099,1500,475000,house,1995.0,5.0,241.0,,,,,,3.0,,Good,228.0,Gas,Non flood zone,Yes,1581.0
