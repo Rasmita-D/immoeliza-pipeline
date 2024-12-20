@@ -316,13 +316,14 @@ def scrape_houses():
 
 # Define the DAG
 with DAG(
-    dag_id='scrape_and_process_houses_path_testing',
+    dag_id='scrape_and_process_houses',
     default_args=default_args,
     description='Scrape house URLs and details using asyncio',
     schedule_interval='0 2 * * *',  # Daily at 2 AM
     start_date=datetime(2024, 1, 1),
     catchup=False,
 ) as dag:
+    
 
     scrape_urls_task = PythonOperator(
         task_id='scrape_urls',
@@ -334,20 +335,24 @@ with DAG(
         python_callable=scrape_houses,
     )
 
-    scrape_urls_task >> scrape_houses_task
-    
-    trigger_target = TriggerDagRunOperator(
+    trigger_target1 = TriggerDagRunOperator(
         task_id='trigger_cleaning',
         trigger_dag_id='data_cleaning_training',
         execution_date='{{ ds }}',
         reset_dag_run=True,
-        wait_for_completion=True
-    )
-
-    trigger_target = TriggerDagRunOperator(
-        task_id='trigger_analysis_cleaning',
-        trigger_dag_id='data_cleaning_analysis',
+        )
+    
+    trigger_target2 = TriggerDagRunOperator(
+        task_id='trigger_analysis',
+        trigger_dag_id='data_analysis_graphs',
         execution_date='{{ ds }}',
         reset_dag_run=True,
-        wait_for_completion=True
     )
+    
+    scrape_urls_task >> scrape_houses_task >> trigger_target1 >> trigger_target2
+    
+
+    
+
+    
+

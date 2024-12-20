@@ -21,7 +21,7 @@ GIT_USER_EMAIL = "adeebathahsin@gmail.com"
 
 # DAG definition
 with DAG(
-    'replace_file_in_github_repo',
+    dag_id='replace_file_in_github_repo',
     description='Replace one file with another in a GitHub repo using Airflow',
     schedule_interval=None,  # Manual run
     start_date=datetime(2024, 1, 1),

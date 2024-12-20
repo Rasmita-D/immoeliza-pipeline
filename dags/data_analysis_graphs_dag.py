@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from datetime import date
 import seaborn as sns
 import numpy as np
+from pathlib import Path
 
 this_day=date.today()
 
@@ -13,7 +14,7 @@ data_folder = repo_root / 'data'
 reports_folder = repo_root / 'reports'
 
 dag = DAG(                                                     
-   dag_id="data_analysy_graphs",                                          
+   dag_id="data_analysis_graphs",                                          
    default_args={
     "email": ["rasmita.damaraju@example.com"],
     "email_on_failure": True
@@ -90,7 +91,7 @@ def outlier_plots(df):
     # Box Plot
     f = sns.boxplot(df['price'])
     plt.title('Boxplot of house prices (€)')
-    f.get_figure().savefig(reports_folder/f"reports/prices_boxplot-{date.today()}.png")
+    f.get_figure().savefig(reports_folder/f"prices_boxplot-{date.today()}.png")
 
 def heatmap(df):
     df_encoded = pd.get_dummies(df, drop_first=True)

@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import joblib
 from xgboost.sklearn import XGBRegressor
 from sklearn.metrics import mean_squared_error
-
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow import DAG
 #from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
@@ -187,5 +187,11 @@ with DAG(dag_id="training_models_dag",
         task_id="copying_model",
         python_callable=copy_model_to_api)
     '''
+    trigger_target = TriggerDagRunOperator(
+        task_id='trigger_repo_push',
+        trigger_dag_id='replace_file_in_github_repo',
+        execution_date='{{ ds }}',
+        reset_dag_run=True
+    )
 
-task1
+task1 >> trigger_target

@@ -184,13 +184,12 @@ get_data = PythonOperator(
 )
 
 
-get_data
-
 trigger_target = TriggerDagRunOperator(
         task_id='trigger_model_creation',
         trigger_dag_id='training_models_dag',
         execution_date='{{ ds }}',
-        reset_dag_run=True,
-        wait_for_completion=True
+        reset_dag_run=True
     )
+
+get_data >> trigger_target
 
