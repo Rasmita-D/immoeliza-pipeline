@@ -170,7 +170,11 @@ with DAG(dag_id="training_models_dag",
     '''
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 task1
+=======
+task1
+>>>>>>> 180ccc48ff4ee50fe30a2010a6466bfc12304220
 =======
 task1
 >>>>>>> 180ccc48ff4ee50fe30a2010a6466bfc12304220
