@@ -17,9 +17,11 @@ this_day=date.today()
 repo_root = Path(__file__).resolve().parent.parent
 data_folder = repo_root / 'data'
 utils_folder= repo_root / 'utils'
+api_folder= repo_root / 'api'
 train_data_path = data_folder/f'train-{this_day}.csv'
 test_data_path = data_folder/f'test-{this_day}.csv'
-model_path = utils_folder/'xgboost.pkl'
+model_path = utils_folder/f'xgboost-{this_day}.pkl'
+api_model_path = api_folder/'xgboost.pkl'
 import pandas as pd
 
 
@@ -41,8 +43,9 @@ def train():
     '''
     try:
         df_train = pd.read_csv(train_data_path)
+        print(f"INFO: The file read from {train_data_path} for training.")
     except FileNotFoundError:
-        print(f"Error: The file at {data_path} was not found.")
+        print(f"Error: The file at {train_data_path} was not found.")
         exit()
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
@@ -57,8 +60,9 @@ def train():
     '''
     try:
         df_test = pd.read_csv(test_data_path)
+        print(f"INFO: The file read from {test_data_path} for testing.")
     except FileNotFoundError:
-        print(f"Error: The file at {data_path} was not found.")
+        print(f"Error: The file at {test_data_path} was not found.")
         exit()
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
@@ -69,8 +73,14 @@ def train():
         exit()
 
     target = ['price']
+    unwanted_string = 'Unnamed: 0'
+    unwanted = [unwanted_string]
+    if unwanted_string in df_train.columns:
+        df_train = df_train.drop(unwanted, axis=1)
+    if unwanted_string in df_test.columns:
+        df_test = df_test.drop(unwanted, axis=1)
     features = list(set(df_train.columns) - set(target))
-
+    
 
     X_train = np.array(df_train.drop(columns=target))
     y_train = np.array(df_train.drop(columns=features))
@@ -148,11 +158,22 @@ def train():
     print(f"RMSE as % of Mean: {rmse_mean_percentage:.2f}%")
     print(f"RMSE as % of Std Dev: {rmse_std_percentage:.2f}%")
 
+#saving model to utils folder
     try:
         joblib.dump(regressor, model_path)
-        print('Model is stored at models/xgboost.pkl')
+        print(f'Model is stored at {model_path}')
     except FileNotFoundError:
         print(f"Error: Couldn't save model: The folder to save file {model_path} was not found.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+#saving model to api folder for api rendering automation
+    
+    try:
+        joblib.dump(regressor, api_model_path)
+        print(f'Model is also stored at {api_model_path}')
+    except FileNotFoundError:
+        print(f"Error: Couldn't save model: The folder to save file {api_model_path} was not found.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
