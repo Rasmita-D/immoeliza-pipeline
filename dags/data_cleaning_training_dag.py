@@ -28,7 +28,7 @@ dag = DAG(
 
 
 def clean_initial():
-    df=pd.read_csv(data_folder/'sample.csv')
+    df=pd.read_csv(data_folder/f'houses_data_{this_day}.csv')
     df=df.drop(['Locality name','Subtype of property','Surface of the plot', 'Garden orientation','Energy class'],axis=1)
     df=df.drop_duplicates(subset=['Property ID'])
     return df
@@ -59,6 +59,8 @@ def pre_process_train(df,price):
 
     #Encoding kitchen data
     df['kitchen']=df['kitchen'].fillna('0')
+    df['kitchen']=df['kitchen'].replace(['USA installed','USA hyper equipped','USA semi equipped','USA not installed'],['Installed','Hyper equipped','Semi equipped','Not installed'])
+    get_val=lambda k: str(k).split(" ")
     encoder = OrdinalEncoder(categories=[['0','Not installed','1','Installed','Semi equipped','Hyper equipped']])
     df['kitchen']=encoder.fit_transform(df[['kitchen']])
     joblib.dump(encoder,utils_folder/'kitchen_ordinal.pkl')
@@ -128,6 +130,7 @@ def pre_process_test(df):
 
     #Encoding kitchen data
     df['kitchen']=df['kitchen'].fillna('0')
+    df['kitchen']=df['kitchen'].replace(['USA installed','USA hyper equipped','USA semi equipped','USA not installed'],['Installed','Hyper equipped','Semi equipped','Not installed'])
     encoder = joblib.load(utils_folder/'kitchen_ordinal.pkl')
     df['kitchen']=encoder.transform(df[['kitchen']])
 
@@ -179,5 +182,3 @@ get_data = PythonOperator(
 )
 
 get_data
-
-#comment

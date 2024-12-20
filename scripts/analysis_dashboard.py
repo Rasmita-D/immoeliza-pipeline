@@ -77,7 +77,7 @@ def outlier_plots(df):
 
 
 def main():
-    df=pd.read_csv('./data/analysis.csv',index_col=0)
+    df=pd.read_csv(f'./data/analysis_{date.today()}.csv',index_col=0)
     df = df.drop(columns=["Property ID"])
     missing_plots(df)
     outlier_plots(df)

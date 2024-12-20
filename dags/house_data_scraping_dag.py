@@ -8,6 +8,7 @@ from requests import Session
 import pandas as pd
 from pathlib import Path
 import os
+import cloudscraper
 
 # Default arguments for the DAG
 default_args = {
@@ -19,17 +20,22 @@ default_args = {
     'retry_delay': timedelta(minutes=1),
 }
 
-repo_root = Path(__file__).resolve().parent
+repo_root = Path(__file__).resolve().parent.parent
 data_folder = repo_root / 'data'
 
 
 # Function to scrape URLs
 async def scrape_list_of_houses(session, url):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
-    }
+    scraper = cloudscraper.create_scraper(
+    browser={
+        "browser": "chrome",
+        "platform": "windows",
+    },
+)
+   
+    
     try:
-        response = session.get(url, headers=headers)
+        response = scraper.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
         await asyncio.sleep(0.1)
 
@@ -39,7 +45,7 @@ async def scrape_list_of_houses(session, url):
             type_house = match_type.group(1) if match_type else None
             if type_house in ['apartment', 'house']:
                 list_url.append(elem.get("href"))
-
+        
         today = date.today()
         file_path = data_folder/f"houses_urls_{today}.txt"
         with open(file_path, 'a') as file:
@@ -71,11 +77,15 @@ def read_house_urls():
 # Async function to scrape house details
 async def scrape_house(url):
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
-        }
-        session = Session()
-        response = session.get(url, headers=headers)
+       
+        scraper = cloudscraper.create_scraper(
+        browser={
+            "browser": "chrome",
+            "platform": "windows",
+        },
+    )
+
+        response = scraper.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
 # Scrapes table content with tag 'th' from the webpage and adds it to a list
         list_keys = []
@@ -289,8 +299,10 @@ async def scrape_house(url):
         data.append(house)
         df = pd.DataFrame(data)
         today = date.today()
-        path = os.environ.get('AIRFLOW_HOME', '/opt/airflow')
-        df.to_csv(data_folder/f"houses_data_{today}.csv", mode='a', index=False, header=False)
+        file_path = data_folder/f"houses_data_{today}.csv"
+        file_exists = os.path.isfile(file_path)
+        df.to_csv(file_path, mode='a', index=False, header=not file_exists)
+        
     except:
         print("An exception occurred")
 
@@ -303,7 +315,7 @@ def scrape_houses():
 
 # Define the DAG
 with DAG(
-    'scrape_and_process_houses_path_testing',
+    dag_id='scrape_and_process_houses_path_testing',
     default_args=default_args,
     description='Scrape house URLs and details using asyncio',
     schedule_interval='0 2 * * *',  # Daily at 2 AM

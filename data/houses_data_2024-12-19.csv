@@ -1,0 +1,187 @@
+Property ID,Locality name,Postal code,price,Type of property,Subtype of property,Construction year,Number of rooms,Surface of the plot,Living area,kitchen,furnished,Open fire,Terrace,Garden,Garden orientation,Number of facades,Swimming pool,State of builing,Energy class,Primary energy consumption,Heating type,Flood zone type,Double glazing,cadastral_income
+20401029,Berchem,2600,299900,apartment,,1965,3,,100,Installed,,,3,,,,,Good,B,144,Fuel oil,Non flood zone,Yes,892
+20402124,Temse,9140,285000,apartment,,1976,3,,100,Installed,,,,,,2,,Good,B,131,Gas,Non flood zone,Yes,941
+20400229,Aalst,9300,229000,apartment,,2000,2,,86,Installed,,,4,,,2,,Good,A,99,Gas,Non flood zone,Yes,847
+20402255,Libramont-chevigny,6800,235000,house,,1900,3,797,156,Semi equipped,0,,,587,,4,0,Good,F,430,Fuel oil,Non flood zone,Yes,718
+20402253,Blankenberge,8370,189000,apartment,,,1,,,Hyper equipped,,,1,,,2,0,As new,C,278,Gas,Non flood zone,Yes,768
+20402250,Antwerpen,2020,226000,apartment,,1965,3,,93,Semi equipped,,,10,,,3,,To be done up,B,166,Gas,,,
+20402249,Beervelde,9080,550000,house,,1970,4,1000,320,Semi equipped,,1,,,,4,,To renovate,E,417,Gas,Non flood zone,,1276
+20338557,Huldenberg,3040,674000,house,,2024,4,1064,193,,,,,,,3,,,A,20,,Non flood zone,Yes,
+20402248,Oost-vlaanderen,9940,225000,house,,,2,293,,1,0,,,217,,4,,,F,742,,Non flood zone,Yes,
+20402246,Geer,4250,215000,house,,,3,969,160,1,,,20,850,,4,,To renovate,E,,Fuel oil,Non flood zone,Yes,466
+20289045,Vilvoorde,1800,322101,apartment,,,2,,100,,,,17,,,,,,A,,,,Yes,
+20289567,Vilvoorde,1800,339552,apartment,,,3,,125,,,,12,,,,,,A,,,,Yes,
+20232847,Li%c3%88ge,4000,199000,house,,,3,49,97,Installed,,,,,,2,,,C,190,Gas,,Yes,550
+20402233,Fl%c3%a9malle,4400,215000,house,,,3,428,160,,0,,10,,,3,,,D,323,Gas,,Yes,1
+20402229,Roeselare,8800,235000,house,,,3,240,165,1,,,,,,,,To restore,F,565,Gas,,Yes,659
+20402228,Wevelgem,8560,225000,house,,,3,541,184,,,,,,,,,Good,F,728,,Non flood zone,Yes,
+20402227,Edegem,2650,229000,apartment,,1970,2,,83,Semi equipped,,,,51,,2,,,C,208,Gas,Non flood zone,,
+20402221,Neder-over-heembeek%20%28bru.%29,1120,295000,apartment,,1974,2,,95,Semi equipped,,,32,,,2,,To be done up,F,344,,,,
+20402219,Archennes,1390,675000,house,,,3,3484,190,Semi equipped,,1,100,,,4,,To renovate,D,340,Fuel oil,,Yes,2607
+20402218,Plombi%c3%a8res%20moresnet,4850,395359,house,,2024,3,475,168,Not installed,0,,40,370,,2,0,As new,A,,Gas,Possible flood zone,Yes,
+20402215,Genk,3600,239000,apartment,,1991,2,,93,,0,,,,,2,0,,B,198,Electric,,Yes,924
+20402214,Roeselare%20%28roeselare%29,8800,468990,apartment,,2024,3,,123,,0,,46,,,3,0,Good,Not specified,,,,No,1
+20326253,Fl%c3%a9malle,4400,215000,house,,,3,428,160,,0,,10,,,3,,,D,323,Gas,,Yes,1
+20402212,Ixelles,1050,418000,apartment,,,2,,92,Hyper equipped,0,,,,,3,0,Good,D,159,Gas,Non flood zone,,655
+20402211,Trazegnies,6183,139000,house,,,2,220,105,,,,,,,2,,To be done up,F,478,Gas,,Yes,401
+20402208,Courcelles,6182,295000,house,,,3,755,150,Installed,,,1,600,,2,0,Good,C,229,Gas,,Yes,431
+20397772,Ixelles,1050,695000,apartment,,1932,2,,150,Installed,0,,,,,2,0,Just renovated,E,236,Gas,Non flood zone,Yes,2000
+20401109,Tremelo,3120,319000,house,,1956,3,500,185,Semi equipped,,,20,260,West,,,To renovate,E,499,Fuel oil,Non flood zone,Yes,903
+20399686,Ronse,9600,370000,house,,2020,3,606,150,Installed,,,,360,South,3,,Good,A,67,Gas,Non flood zone,Yes,791
+20401344,Middelkerke,8430,115000,apartment,,1969,1,,26,Semi equipped,1,,,,,2,,Just renovated,C,265,Gas,Non flood zone,Yes,327
+20401336,Ronse,9600,230000,apartment,,1952,2,,128,Installed,,,4,,,3,,Just renovated,D,326,Fuel oil,Non flood zone,Yes,857
+20398282,Forest,1190,215000,apartment,,1964,1,,63,Not installed,0,,5,,,2,0,To renovate,E,215,Gas,Non flood zone,Yes,
+20396673,Gent,9000,435000,apartment,,1759,1,,67,Installed,,,15,31,,,,Good,A,78,Gas,Non flood zone,Yes,
+20401180,Oupeye,4683,149000,house,,1850,4,730,134,Installed,0,,40,570,,2,0,To be done up,C,220,Gas,Non flood zone,Yes,366
+20401037,Hoboken,2660,349900,house,,1960,3,206,136,1,,,16,25,North,,,To renovate,F,534,,Non flood zone,Yes,959
+20397088,Koekelberg,1081,325000,apartment,,1967,3,,151,Installed,0,,7,,,2,0,Good,D,208,Fuel oil,Non flood zone,Yes,1891
+20393411,Antwerpen-2000,2000,498500,apartment,,2017,2,,129,Hyper equipped,0,,10,1400,South West,,,As new,A,61,Gas,Non flood zone,Yes,1190
+20394756,Kluisbergen,9690,179000,house,,1965,3,435,160,Semi equipped,,,,380,South East,3,,To renovate,E,422,Gas,Non flood zone,Yes,
+20402204,Nismes,5670,39000,house,,,1,35,58,Semi equipped,0,,,,,2,,,G,857,Wood,,No,138
+20402205,Jumet%20%28charleroi%29,6040,188000,house,,1963,2,444,73,Installed,0,,73,,,2,,,G,721,Gas,,No,1714
+20402195,Anderlecht,1070,325000,apartment,,1958,3,,132,Installed,0,,3,,,3,,,Not specified,,Gas,,Yes,
+20356543,Amay,4540,200000,house,,,5,,223,,,,,,,,,,G,539,,,,
+20366637,Jumet,6040,199990,house,,,5,,,Hyper equipped,,,,,,2,,,C,220,,Non flood zone,Yes,669
+20402194,Stekene,9190,385000,apartment,,2024,2,,122,Installed,,,25,,,3,,,B,133,Gas,Non flood zone,,
+20402191,Charleroi%20marcinelle,6001,120000,apartment,,1966,4,,120,Semi equipped,0,,,,,4,0,Good,D,327,Fuel oil,Non flood zone,,
+20402189,Roeselare%20%28roeselare%29,8800,258250,apartment,,2024,2,,83,,0,,11,,,2,0,Good,Not specified,,,,No,1
+20402182,Oostende,8400,289000,apartment,,,2,,134,,1,,4,,,,,As new,B,139,,,,
+20402181,H%c3%89ron,4217,850000,house,,1874,4,26733,690,Hyper equipped,,,,,,2,,To renovate,F,505,Pellet,Non flood zone,Yes,766
+20402179,Westerlo,2260,439000,house,,1988,3,755,120,,,,,,,4,,Good,C,209,Gas,,Yes,
+20402177,Hechtel-eksel,3941,549000,house,,1987,4,1376,285,Hyper equipped,,,,,,4,,As new,B,194,Gas,,,
+20402176,Courcelles,6180,249000,house,,,3,1098,148,Installed,0,,,800,,2,0,Good,E,409,Fuel oil,Non flood zone,Yes,540
+20402170,Tubize,1480,215000,apartment,,1969,2,,85,Installed,0,,,,,,0,Good,C,204,,,Yes,1041
+20402166,Florennes%20morialm%c3%a9,5621,234000,house,,,3,,135,Installed,0,,,,,2,0,Good,E,349,Pellet,,Yes,498
+20402164,Rumbeke,8800,719795,house,,,4,764,,,,,,,,4,,As new,Not specified,,,Non flood zone,,
+20397989,Charleroi%20dampremy,6020,120000,house,,,3,50,120,,0,,,,,3,,To be done up,F,448,,,,
+20402156,Deinze,9800,319000,house,,2007,3,160,121,Installed,,,,,,2,,Good,B,168,Gas,,Yes,338
+20402157,Oudenaarde,9700,397000,house,,2023,3,401,160,Hyper equipped,,,,,,4,,,Not specified,,,Non flood zone,Yes,
+20402155,Jette,1090,242500,apartment,,,2,,,Semi equipped,,,,,,,0,Good,G,666,,,,
+20402145,Geraardsbergen,9500,489000,house,,,5,631,238,Hyper equipped,,,,,,3,,,A,9,,,Yes,
+20402147,Geraardsbergen,9500,399000,house,,,4,266,256,Installed,,,,,,2,,As new,B,173,Gas,,Yes,
+20402144,Geraardsbergen,9500,275000,house,,,4,240,199,Installed,,,46,234,South West,3,,Good,F,834,Electric,,Yes,644
+20402143,Herne,1540,475000,house,,1978,3,592,228,Installed,,,,,,4,,As new,B,188,Gas,,Yes,
+20394069,Tienen,3300,184000,apartment,,1972,2,,81,1,,,22,,,4,,To renovate,C,202,Gas,Non flood zone,Yes,755
+20393142,Ninove,9400,299000,apartment,,2006,3,,153,Installed,,,6,,,2,,Good,A,92,Fuel oil,Non flood zone,Yes,1054
+20400912,Grimbergen,1850,710000,house,,1990,4,1230,184,Installed,,,,1000,,4,,Good,B,116,,Non flood zone,Yes,2015
+20401968,Blankenberge,8370,285000,apartment,,2008,2,,77,Installed,,,,,,2,,Good,A,75,Gas,Non flood zone,Yes,876
+20401547,Antwerpen,2000,319000,apartment,,1955,1,,85,Installed,,,,,,2,,As new,D,355,Gas,Non flood zone,Yes,548
+20400089,Ooigem,8710,259000,house,,1930,3,176,223,Installed,,,,104,,,,Good,C,259,Gas,Non flood zone,Yes,322
+20401856,Lessen,7860,279500,house,,,3,300,180,Installed,,,35,300,,2,,To be done up,D,285,Gas,Non flood zone,Yes,562
+20397633,Grembergen,9200,278000,apartment,,1974,2,,165,Installed,,,30,30,East,4,,Good,C,224,Gas,Non flood zone,Yes,
+20400653,Bornem,2880,359000,house,,1958,3,516,171,Installed,,,20,,,,,To be done up,F,858,,Non flood zone,Yes,752
+20400192,Sint-gillis-waas,9170,525000,house,,1993,3,886,286,Hyper equipped,,,14,728,,4,,Good,D,337,,Non flood zone,Yes,1618
+20394068,Brussel,1000,210000,apartment,,2013,1,,59,Installed,1,,3,,,2,,Good,E,234,Electric,Possible flood zone,Yes,920
+20394202,Turnhout,2300,299000,apartment,,2006,3,,114,Semi equipped,,,4,,,,,Good,B,147,Gas,Non flood zone,Yes,
+20401486,Saint-josse-ten-noode,1210,159000,apartment,,1954,1,,50,Semi equipped,0,,,,,2,0,To renovate,G,,Gas,Non flood zone,Yes,
+20402141,Geraardsbergen,9500,150000,house,,,3,70,109,,,,,,,2,,Good,E,434,,,,
+20402142,Geraardsbergen,9500,299000,house,,1960,3,835,136,,,,,,,4,,Good,D,391,,,Yes,525
+20402148,Lessen,7860,235000,apartment,,,2,,111,Installed,,,,,,2,,Good,C,244,,,,
+20402140,Geraardsbergen,9500,175000,apartment,,,4,,179,,,,,,,,,To be done up,D,319,Gas,,Yes,
+20402139,Ninove,9400,325000,house,,,3,426,181,Installed,,,,,,3,,Good,D,350,,,Yes,
+20402146,Geraardsbergen,9500,150000,house,,,3,120,151,Installed,,,,,,2,,To be done up,F,608,Gas,,Yes,
+20402137,Suarl%c3%89e,5020,449000,house,,1934,3,2014,180,Installed,,1,,,,4,,Just renovated,D,333,Fuel oil,,Yes,738
+20402136,Dinant,5500,159000,house,,1874,2,124,116,Hyper equipped,,,8,124,,2,,,D,272,Gas,,Yes,267
+20402134,Waasmunster,9250,429000,house,,1975,3,291,185,Installed,0,,,,,3,,Good,C,225,Fuel oil,Non flood zone,Yes,999
+20402133,Roeselare%20%28roeselare%29,8800,315012,apartment,,2024,2,,92,,0,,11,,,2,0,Good,Not specified,,,,No,1
+20402132,Roeselare%20%28roeselare%29,8800,540946,apartment,,2024,3,,138,,0,,11,,,2,0,Good,Not specified,,,,No,1
+20337649,Flemalle,4400,249000,house,,1976,3,717,122,1,0,,,,,4,0,,D,328,Fuel oil,Non flood zone,Yes,934
+20402131,Morville,5620,230000,house,,2008,1,2062,108,1,0,,,,,4,,,D,319,Gas,Non flood zone,Yes,638
+20402130,Huy,4500,119000,house,,1850,3,60,60,,0,,,,,2,,,F,498,Gas,Non flood zone,Yes,213
+20402126,Li%c3%a8ge,4000,219000,house,,,3,,155,Hyper equipped,,,23,,,2,,To restore,F,75028,Fuel oil,,Yes,949
+20402125,Dessel,2480,329000,house,,1973,4,1436,227,USA installed,,,,,,3,,As new,B,190,Gas,Non flood zone,Yes,916
+20402124,Temse,9140,285000,apartment,,1976,3,,100,Installed,,,,,,2,,Good,B,131,Gas,Non flood zone,Yes,941
+20402123,Woluwe-saint-pierre,1150,520000,house,,,3,223,140,,,,,,,,,,G,354,,,,
+20402122,Torhout,8820,475000,house,,,6,224,,,,,,,,,,Good,Not specified,,Gas,,Yes,1318
+20402117,Roeselare%20%28roeselare%29,8800,257540,apartment,,2024,1,,75,,0,,11,,,2,0,Good,Not specified,,,,No,1
+11010004,Scherpenheuvel,3270,304000,apartment,,2023,2,,91,Semi equipped,,,15,,,,,,Not specified,,Gas,Non flood zone,Yes,
+11083320,Fosses-la-ville,5070,235000,apartment,,,2,,103,USA installed,,,8,,,3,,Just renovated,Not specified,,,Non flood zone,Yes,
+10978815,Hechtel,3940,329000,house,,,3,1600,230,,,,,,,4,,To renovate,F,538,,Non flood zone,,
+20402113,Balen,2490,499000,house,,,5,648,250,,,,,,,4,,Just renovated,B,142,Gas,,Yes,
+20402112,Putte,2580,299000,house,,1954,4,281,245,,,,,,,,,To be done up,E,453,Fuel oil,Non flood zone,Yes,976
+20402111,Zemst,1980,585000,house,,,3,1170,350,Installed,,,100,,,4,,Good,C,208,,Non flood zone,,1007
+20402110,Boortmeerbeek,3190,330000,house,,1970,2,630,193,Semi equipped,,,,,,4,,To renovate,F,775,Fuel oil,Non flood zone,,
+20402107,Anderlecht,1070,367000,apartment,,2018,3,,99,1,,,20,,,,,Good,C,117,Gas,,Yes,1342
+20397657,Duffel,2570,565000,house,,1953,3,1242,200,Installed,,,50,760,South East,,,Just renovated,B,148,Gas,Non flood zone,Yes,1297
+20400913,Hofstade,9308,239000,apartment,,1980,2,,92,Installed,,,,,,2,,Good,B,134,Gas,Non flood zone,,733
+20399303,Boom,2850,245000,apartment,,1996,2,,115,Semi equipped,,,,,,2,,Good,C,250,Gas,Non flood zone,Yes,723
+20401126,Mechelen,2800,398000,house,,1899,3,91,119,Installed,,,7,54,North East,2,,Good,D,390,Gas,Non flood zone,Yes,543
+20398884,Gavere,9890,647000,house,,2011,4,515,212,,0,,39,,,3,,Good,A,3,,Non flood zone,Yes,741
+20397124,Blankenberge,8370,199000,apartment,,2004,1,,55,Installed,,,,,,,,Good,B,123,Gas,Non flood zone,Yes,710
+20393997,Saint-gilles,1060,265000,apartment,,1960,2,,63,Not installed,,,,,,2,0,Just renovated,G,419,,Non flood zone,,
+20397881,Oudenaarde,9700,255000,house,,1940,4,750,182,1,0,,,,,2,,Good,E,493,Gas,Non flood zone,Yes,535
+20399652,Dendermonde,9200,215000,apartment,,1992,1,,84,Installed,,,4,,,2,,Good,B,116,Gas,Non flood zone,Yes,875
+20399640,Antwerpen,2610,249900,apartment,,1960,2,,80,Semi equipped,,,11,,,2,,To be done up,B,117,Gas,Non flood zone,Yes,
+20398723,Arlon,6700,325000,apartment,,2012,2,,89,Installed,,,6,,,3,,Good,B,118,Gas,,Yes,1226
+20401805,Tienen,3300,339000,house,,1952,3,452,161,1,,,,280,South,2,,As new,C,250,Gas,Non flood zone,Yes,652
+20400673,Sint-martens-latem,9830,815000,house,,1973,3,1163,171,Installed,0,,26,1010,,4,0,To be done up,F,646,Fuel oil,Non flood zone,Yes,1975
+20401141,Boortmeerbeek,3190,845000,house,,1918,4,4853,464,Installed,,,28,4350,,4,,Good,D,376,Gas,Non flood zone,Yes,2056
+20391562,Merksem,2170,155000,apartment,,1968,1,,73,Semi equipped,,,11,,,2,,To be done up,B,187,Gas,Non flood zone,,793
+20393939,Etterbeek,1040,345000,apartment,,1956,2,,100,Semi equipped,0,,,,,2,0,To be done up,F,314,Gas,Non flood zone,Yes,1321
+20399186,Bassenge,4690,119000,house,,1918,2,655,74,Not installed,0,,72,580,,3,0,To renovate,G,987,,Non flood zone,Yes,255
+20400347,Hamme,9220,298000,house,,1970,3,206,195,Semi equipped,,,22,97,North West,2,,Good,D,319,Gas,Non flood zone,Yes,
+20393133,Geraardsbergen,9500,384000,apartment,,1969,3,,252,Installed,,,,,,2,,Good,B,184,Gas,Non flood zone,Yes,775
+20401487,Antwerpen,2660,159900,apartment,,,2,,70,Installed,,,,,,2,,Good,C,245,Gas,Non flood zone,Yes,
+20401996,Denderleeuw,9470,195000,apartment,,2017,1,,64,Installed,,,,,,,,Good,A,,Gas,Non flood zone,Yes,778
+20401012,Evergem,9940,199000,apartment,,1969,2,,71,Installed,1,,14,,,1,0,Good,B,132,,Non flood zone,Yes,540
+20402104,Antwerpen,2020,299000,apartment,,,1,,64,,,,,93,,,,,B,125,Gas,Non flood zone,Yes,
+20402098,Everberg,3078,490000,house,,1951,,513,,,,,,,,3,,Good,D,372,,,No,1599
+20402093,Hasselt,3500,385000,house,,1993,4,746,200,1,,,,664,South,4,,To be done up,C,222,Gas,Non flood zone,Yes,1170
+20402091,Bilzen,3740,285000,apartment,,2001,2,,166,1,,,,227,,2,,As new,B,162,Gas,,Yes,858
+20402096,Beringen,3583,595000,house,,2003,3,937,317,1,,,40,,,4,,As new,B,162,Gas,,Yes,1378
+20402092,Ham,3945,439000,house,,2022,3,794,153,1,,,25,,,3,,As new,A,6,Gas,,Yes,745
+20402082,Woluwe-saint-lambert,1200,520000,apartment,,2022,3,,106,USA hyper equipped,,,13,,,2,,As new,A,42,Gas,,Yes,
+20402081,Oostende,8400,295000,house,,1977,3,165,173,1,,,,79,,2,,Good,D,393,Electric,Non flood zone,Yes,1070
+20402080,Vilvoorde,1800,439000,house,,1949,3,142,170,Installed,,,,54,East,3,,Good,C,265,Gas,Non flood zone,Yes,1236
+20402075,Evergem,9940,335250,apartment,,2021,2,,,,,,1,,,,0,As new,C,229,Gas,,No,
+20402074,Menen,8930,145000,house,,1930,4,80,,,,,,,,2,,Good,E,475,Gas,Possible flood zone,No,456
+20402073,Bissegem,8501,259000,house,,1930,3,340,,,,,,,,2,,Good,C,216,,Non flood zone,No,543
+20402071,Gent%20%289000%29,9000,290000,apartment,,1964,2,,86,,,,6,,,,,To be done up,B,117,Gas,Non flood zone,Yes,1062
+20402065,Sint-niklaas,9100,219000,house,,,4,175,,,,,,,,,,,F,620,,,,
+20402063,Evergem,9940,490133,house,,,3,257,,,,,,,,,,As new,Not specified,,,Non flood zone,,
+20402062,Evergem,9940,444789,house,,,4,193,,,0,,,,,,,As new,Not specified,,,Non flood zone,,
+20402060,Evergem,9940,519731,house,,,3,279,,,,,,,,,,As new,Not specified,,,Non flood zone,,
+20402059,Bruxelles,1000,300000,apartment,,1920,1,,91,Semi equipped,0,,,,,2,,Good,C,130,Gas,,Yes,
+20402055,Zedelgem,8210,356895,apartment,,2023,3,,119,,,,17,,,,,Good,Not specified,,,,Yes,
+20192340,Deurne,2100,169000,apartment,,1960,2,,81,,0,,,,,2,,Good,D,320,Gas,Non flood zone,Yes,
+20402047,Oostende,8400,139000,apartment,,1966,1,,62,,,,,,,2,,Good,Not specified,,,,Yes,718
+20402046,Knokke,8300,1295000,apartment,,1997,2,,76,Hyper equipped,,,,,,4,,As new,C,282,Gas,Non flood zone,Yes,
+20402045,Sint-niklaas,9100,315000,apartment,,1965,3,,145,,0,,,,,,,Good,C,289,Gas,Non flood zone,Yes,1171
+20402044,Gavere,9890,279000,house,,1961,3,423,150,Semi equipped,0,,,,,3,,To renovate,D,311,Fuel oil,Non flood zone,Yes,486
+20401148,De-haan,8420,274000,apartment,,2014,2,,69,Hyper equipped,,,,,,,,Good,A,96,Gas,Non flood zone,Yes,821
+20402046,Knokke,8300,1295000,apartment,,1997,2,,76,Hyper equipped,,,,,,4,,As new,C,282,Gas,Non flood zone,Yes,
+20400474,Seraing,4100,179900,house,,1950,6,220,217,Installed,0,,28,136,,2,0,To be done up,C,253,Gas,Non flood zone,Yes,
+20400770,Ronse,9600,315000,house,,1970,3,393,195,1,,,20,320,South,,,Good,B,199,,Non flood zone,Yes,
+20402125,Dessel,2480,329000,house,,1973,4,1436,227,USA installed,,,,,,3,,As new,B,190,Gas,Non flood zone,Yes,916
+20399219,Turnhout,2300,210000,apartment,,2000,2,,84,USA installed,,,,,,,,Good,C,212,Gas,Non flood zone,Yes,743
+20399655,Bru,1000,395000,apartment,,2017,2,,93,USA installed,,,,45,,2,,As new,B,70,Gas,Non flood zone,Yes,1032
+20399869,Hoogstraten,2320,427000,apartment,,1994,2,,129,,,,,,,3,,Good,B,,,Non flood zone,Yes,
+20398810,Ixelles,1050,695000,apartment,,1974,3,,184,Hyper equipped,,,11,,,2,0,As new,E,233,Electric,Non flood zone,Yes,4657
+20392783,Ronse,9600,465000,house,,1992,4,660,324,Hyper equipped,0,,20,340,,3,0,Good,B,170,Gas,Non flood zone,Yes,1290
+20396991,Deurne,2100,175000,apartment,,1973,2,,85,Not installed,,,,,,2,,To renovate,E,455,Gas,Non flood zone,Yes,
+20397631,Beringen,3581,195000,apartment,,1993,2,,100,Installed,,,,,,3,,Good,A,85,Gas,Non flood zone,Yes,
+20392611,Oostende,8400,229000,apartment,,,2,,88,1,0,,5,90,South West,,,Good,B,192,,Non flood zone,,659
+20392698,Ronse,9600,239000,apartment,,2007,2,,100,Installed,,,,,,,,Good,A,92,Gas,Non flood zone,Yes,
+20395986,Heusden,9070,300000,apartment,,1990,4,,110,Installed,,,,,,,,Good,B,146,,Non flood zone,Yes,619
+20396405,Aalst,9300,549000,apartment,,2000,4,,180,Installed,,,15,,,2,,Good,B,123,,Non flood zone,Yes,1199
+20396587,Harelbeke,8530,660000,apartment,,2019,2,,147,Installed,,,,,,2,,Good,B,155,Gas,,Yes,1074
+20397769,Bruxelles,1000,695000,apartment,,1932,2,,150,Installed,,,,,,2,,Just renovated,D,205,Gas,Non flood zone,Yes,2000
+20400550,Dessel,2480,275000,house,,1964,4,780,164,Semi equipped,,1,,,,4,,To renovate,F,741,Gas,Non flood zone,Yes,582
+20402042,Evergem,9940,400037,house,,,4,126,,,0,,,,,,,As new,Not specified,,,Non flood zone,,
+20402038,Diepenbeek,3590,390000,house,,2016,3,,147,Hyper equipped,,,62,,,2,,As new,B,144,Gas,,,926
+20402029,Linter,3350,345000,house,,1980,4,741,206,1,0,,14,,,,,To be done up,D,381,,Non flood zone,Yes,
+20402025,Zedelgem,8210,370491,apartment,,2023,2,,124,,,,16,,,,,Good,Not specified,,,,Yes,
+20402024,Evergem,9940,490858,house,,,3,257,,,,,,,,,,As new,Not specified,,,Non flood zone,,
+20398851,Dison,4820,298500,house,,2023,3,,137,Not installed,,,,124,,2,,As new,A,73,,Non flood zone,,
+20402020,Zedelgem,8210,349518,apartment,,2023,2,,119,1,,,12,,,,,Good,Not specified,,,,Yes,
+20402016,Plombi%c3%a8res%20moresnet,4850,359423,house,,2024,3,228,163,Not installed,0,,40,120,,2,0,As new,A,,Gas,Possible flood zone,Yes,
+20401997,Evergem,9940,498451,house,,,3,259,,,,,,,,,,As new,Not specified,,,Non flood zone,,
+20401996,Denderleeuw,9470,195000,apartment,,2017,1,,64,Installed,,,,,,,,Good,A,,Gas,Non flood zone,Yes,778
+20401994,Evergem,9940,431631,house,,,3,279,,,,,,,,,,As new,Not specified,,,Non flood zone,,
+20401987,Essen,2910,439000,apartment,,1918,2,,218,,0,,,,,,,,C,292,,Non flood zone,Yes,1363
+20401986,Rocourt,4000,259500,apartment,,2024,,,95,Installed,0,,8,,,4,,,Not specified,,,,Yes,
+20401984,Vise,4600,220000,house,,,3,105,137,Installed,0,,,,,2,,,E,392,Gas,,Yes,547
+20401982,Rocourt,4000,174940,apartment,,2024,1,,60,Installed,0,,6,,,2,,,Not specified,,Gas,,Yes,
+20401980,Genk,3600,197500,apartment,,1973,2,,86,,,,,,,,,Good,C,261,,Non flood zone,,
+20401979,Pepingen,1670,600000,house,,2007,4,2197,245,,,1,,,,3,,As new,C,233,Electric,Non flood zone,Yes,1466
+11203535,Schaerbeek,1030,435000,house,,,4,,195,,,,20,,,2,,Good,Not specified,,,,,
