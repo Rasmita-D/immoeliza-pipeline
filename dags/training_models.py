@@ -1,4 +1,3 @@
-
 import numpy as np
 from sklearn.model_selection import train_test_split
 import joblib
@@ -170,4 +169,8 @@ with DAG(dag_id="training_models_dag",
         python_callable=copy_model_to_api)
     '''
 
+<<<<<<< HEAD
 task1
+=======
+task1
+>>>>>>> 180ccc48ff4ee50fe30a2010a6466bfc12304220
