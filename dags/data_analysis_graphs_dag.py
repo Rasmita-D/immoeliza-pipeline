@@ -1,8 +1,24 @@
+from airflow import DAG
+from airflow.operators.python import PythonOperator
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import date
 import seaborn as sns
 import numpy as np
+
+this_day=date.today()
+
+repo_root = Path(__file__).resolve().parent.parent
+data_folder = repo_root / 'data'
+reports_folder = repo_root / 'reports'
+
+dag = DAG(                                                     
+   dag_id="data_analysy_graphs",                                          
+   default_args={
+    "email": ["rasmita.damaraju@example.com"],
+    "email_on_failure": True
+}
+)
 
 def detect_outliers_iqr(data):
     Q1 = data.quantile(0.25)
@@ -17,7 +33,6 @@ def missing_plots(df):
     percent_non_null = 100 - percent_missing
 
     plt.figure(figsize=(12, 6))
-
 
     # Plot the Non-Missing Values
     bars_non_null = plt.bar(df.columns, percent_non_null, label='Non-Missing Values', 
@@ -35,7 +50,7 @@ def missing_plots(df):
 
     # Add legend outside the plot area
     plt.legend(title='Values', fontsize=12, loc='upper left', bbox_to_anchor=(1, 1))
-    plt.savefig(f"./reports/missing_bar-{date.today()}.png")
+    plt.savefig(reports_folder/f"missing_bar-{date.today()}.png")
 
 
     # Calculate total number of missing and non-missing values
@@ -51,7 +66,7 @@ def missing_plots(df):
     plt.figure(figsize=(8, 6))
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, explode=(0.1, 0))  # Explode the first slice for emphasis
     plt.title('Percentage between Missing and Non-Missing Values', fontsize=16)
-    plt.savefig(f"./reports/missing_pie-{date.today()}.png") 
+    plt.savefig(reports_folder/f'missing_pie-{date.today()}.png') 
 
 def outlier_plots(df):
     outliers = sum(detect_outliers_iqr(df['price']))
@@ -59,7 +74,7 @@ def outlier_plots(df):
     percent_outliers = 100 * outliers / number_of_values
     outlier_analysis=f"Number of outliers detected: {(outliers)}\nOn the number of {number_of_values} values\n{round(percent_outliers, 2)} % outliers \nMean value: € {round(df['price'].mean(),1)}\nMedian value: € {df['price'].median()}\nMode value: € {df['price'].mode()[0]}"
     
-    with open(f"./reports/outlier_analysis-{date.today()}.txt","w",encoding='utf8') as file:
+    with open(reports_folder/f"outlier_analysis-{date.today()}.txt","w",encoding='utf8') as file:
         file.write(outlier_analysis)
     
     # Create the plot
@@ -69,13 +84,13 @@ def outlier_plots(df):
     plt.xlabel("Price (€)")    
     plt.ylabel("Frequency", size=12)                
     plt.grid(True, alpha=0.3, linestyle="--")     
-    plt.savefig(f"./reports/prices-{date.today()}.png")
+    plt.savefig(reports_folder/f"prices-{date.today()}.png")
     plt.close()
     
     # Box Plot
     f = sns.boxplot(df['price'])
     plt.title('Boxplot of house prices (€)')
-    f.get_figure().savefig(f"./reports/prices_boxplot-{date.today()}.png")
+    f.get_figure().savefig(reports_folder/f"reports/prices_boxplot-{date.today()}.png")
 
 def heatmap(df):
     df_encoded = pd.get_dummies(df, drop_first=True)
@@ -93,7 +108,7 @@ def heatmap(df):
     plt.figure(figsize=(12, 10))
     f=sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
     plt.title('Correlation Heatmap of Property Data')
-    f.get_figure().savefig(f"./reports/corelation_heatmap-{date.today()}.png")
+    f.get_figure().savefig(reports_folder/f"corelation_heatmap-{date.today()}.png")
     
 def frequency_construction_year(df):
     # Create the plot
@@ -103,7 +118,7 @@ def frequency_construction_year(df):
     plt.xlabel("Construction year")    
     plt.ylabel("Frequency")                
     plt.grid(True, alpha=0.3, linestyle="--")     
-    plt.savefig(f"./reports/frequency_construction_year-{date.today()}.png")
+    plt.savefig(reports_folder/f"frequency_construction_year-{date.today()}.png")
 
 def average_price_per_room(df):
     # Drop rows with NaN values in 'rooms' after mapping
@@ -127,7 +142,7 @@ def average_price_per_room(df):
 
     # Show the plot
     plt.tight_layout()
-    plt.savefig(f"./reports/average_price_per_room-{date.today()}.png")
+    plt.savefig(reports_folder/f"average_price_per_room-{date.today()}.png")
 
 def average_price_state_building(df):
     # Define the order of categories
@@ -164,11 +179,10 @@ def average_price_state_building(df):
 
     # Save and show the plot
     plt.tight_layout()
-    plt.savefig(f'./reports/average_price_by_state_building-{date.today()}.png', dpi=300)
+    plt.savefig(reports_folder/f'average_price_by_state_building-{date.today()}.png', dpi=300)
 
-    
 def main():
-    df=pd.read_csv(f'./data/houses_data_{date.today()}.csv')
+    df=pd.read_csv(data_folder/f'houses_data_{this_day}.csv')
     df=df.drop(['Locality name','Subtype of property','Surface of the plot', 'Garden orientation','Energy class'],axis=1)
     df=df.drop_duplicates(subset=['Property ID'])
     df = df.drop(columns=["Property ID"])
@@ -179,4 +193,10 @@ def main():
     average_price_per_room(df)
     average_price_state_building(df)
 
-main()
+graphs=PythonOperator(   
+    task_id="main",
+   python_callable=main,                             
+   dag=dag
+)
+
+graphs
