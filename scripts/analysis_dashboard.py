@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import date
 import seaborn as sns
+import numpy as np
 
 def detect_outliers_iqr(data):
     Q1 = data.quantile(0.25)
@@ -69,17 +70,111 @@ def outlier_plots(df):
     plt.ylabel("Frequency", size=12)                
     plt.grid(True, alpha=0.3, linestyle="--")     
     plt.savefig(f"./reports/prices-{date.today()}.png")
-
+    plt.close()
+    
     # Box Plot
-    f=sns.boxplot(df['price'])
+    f = sns.boxplot(df['price'])
+    plt.title('Boxplot of house prices (€)')
     f.get_figure().savefig(f"./reports/prices_boxplot-{date.today()}.png")
 
+def heatmap(df):
+    df_encoded = pd.get_dummies(df, drop_first=True)
+    df_encoded = df_encoded.drop(columns=['Open fire'])
+    # Select only numeric columns for correlation analysis
+    df_numeric = df_encoded.select_dtypes(include=[np.number])
 
+    # Calculate the correlation matrix
+    correlation_matrix = df_numeric.corr(method='spearman')
 
+    # Display the correlation matrix
+    print(correlation_matrix['price'].sort_values(ascending=False))
+
+    # Create the heatmap
+    plt.figure(figsize=(12, 10))
+    f=sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
+    plt.title('Correlation Heatmap of Property Data')
+    f.get_figure().savefig(f"./reports/corelation_heatmap-{date.today()}.png")
+    
+def frequency_construction_year(df):
+    # Create the plot
+    sns.kdeplot(data = df['Construction year'],bw_adjust=.25)
+    plt.title('Construction year')
+    plt.xlim([1800,2030])  
+    plt.xlabel("Construction year")    
+    plt.ylabel("Frequency")                
+    plt.grid(True, alpha=0.3, linestyle="--")     
+    plt.savefig(f"./reports/frequency_construction_year-{date.today()}.png")
+
+def average_price_per_room(df):
+    # Drop rows with NaN values in 'rooms' after mapping
+    df = df.dropna(subset=['Number of rooms', 'price'])
+
+    # Create the bar plot
+    plt.figure(figsize=(10, 6))
+    bar_plot = sns.barplot(x='Number of rooms', y='price', data=df, errorbar=None, palette="viridis")
+
+    # Add value annotations on top of the bars
+    for p in bar_plot.patches:
+        bar_plot.annotate(f'€{int(p.get_height()):,}', 
+                        (p.get_x() + p.get_width() / 2., p.get_height()), 
+                        ha='center', va='bottom', fontsize=10)
+    def format_price(x, _):
+        return f'€{int(x):,}'  # Formats numbers with commas and adds a dollar sign
+    # Set labels and title
+    plt.xlabel('Number of Rooms', fontsize=12)
+    plt.ylabel('Price (€)', fontsize=12)
+    plt.title('Average Price by Number of Rooms', fontsize=14)
+
+    # Show the plot
+    plt.tight_layout()
+    plt.savefig(f"./reports/average_price_per_room-{date.today()}.png")
+
+def average_price_state_building(df):
+    # Define the order of categories
+    category_order = ['To restore', 'To renovate', 'To be done up', 
+                    'Good', 'Just renovated', 'As new']
+
+    # Aggregate data
+    df_grouped = df.groupby('State of builing', as_index=False)['price'].mean()
+
+    # Set the style
+    sns.set_style("whitegrid")
+
+    # Create the figure
+    plt.figure(figsize=(10, 6), dpi=80)
+
+    # Create the bar plot with specified order
+    bar_plot = sns.barplot(x='State of builing', y='price', data=df_grouped, 
+                palette="viridis", ci=None, order=category_order)
+    
+    # Add value annotations on top of the bars
+    for p in bar_plot.patches:
+        bar_plot.annotate(f'€{int(p.get_height()):,}', 
+                        (p.get_x() + p.get_width() / 2., p.get_height()), 
+                        ha='center', va='bottom', fontsize=10)
+
+    # Customize labels and title
+    plt.title('Average Price by State of Building', fontsize=18, fontweight='bold')
+    plt.xlabel('State of Building', fontsize=15, fontweight='bold')
+    plt.ylabel('Average Price (€)', fontsize=15, fontweight='bold')
+    plt.xticks(rotation=90)
+
+    # Add grid
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+    # Save and show the plot
+    plt.tight_layout()
+    plt.savefig(f'./reports/average_price_by_state_building-{date.today()}.png', dpi=300)
+    plt.show()
+    
 def main():
     df=pd.read_csv(f'./data/analysis_{date.today()}.csv',index_col=0)
     df = df.drop(columns=["Property ID"])
     missing_plots(df)
     outlier_plots(df)
+    heatmap(df)
+    frequency_construction_year(df)
+    average_price_per_room(df)
+    average_price_state_building(df)
 
-main()
+ main()
