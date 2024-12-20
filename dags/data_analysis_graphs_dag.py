@@ -35,6 +35,7 @@ def missing_plots(df):
 
     plt.figure(figsize=(12, 6))
 
+
     # Plot the Non-Missing Values
     bars_non_null = plt.bar(df.columns, percent_non_null, label='Non-Missing Values', 
                             color='#28a745', edgecolor='black', linewidth=1.2)
@@ -52,6 +53,7 @@ def missing_plots(df):
     # Add legend outside the plot area
     plt.legend(title='Values', fontsize=12, loc='upper left', bbox_to_anchor=(1, 1))
     plt.savefig(reports_folder/f"missing_bar-{date.today()}.png")
+    plt.close()
 
 
     # Calculate total number of missing and non-missing values
@@ -67,17 +69,18 @@ def missing_plots(df):
     plt.figure(figsize=(8, 6))
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, explode=(0.1, 0))  # Explode the first slice for emphasis
     plt.title('Percentage between Missing and Non-Missing Values', fontsize=16)
-    plt.savefig(reports_folder/f'missing_pie-{date.today()}.png') 
+    plt.savefig(reports_folder/f"missing_pie-{date.today()}.png") 
+    plt.close()
 
 def outlier_plots(df):
     outliers = sum(detect_outliers_iqr(df['price']))
     number_of_values = len(df) - df['price'].isna().sum()
     percent_outliers = 100 * outliers / number_of_values
     outlier_analysis=f"Number of outliers detected: {(outliers)}\nOn the number of {number_of_values} values\n{round(percent_outliers, 2)} % outliers \nMean value: € {round(df['price'].mean(),1)}\nMedian value: € {df['price'].median()}\nMode value: € {df['price'].mode()[0]}"
-    
+
     with open(reports_folder/f"outlier_analysis-{date.today()}.txt","w",encoding='utf8') as file:
         file.write(outlier_analysis)
-    
+
     # Create the plot
     sns.kdeplot(data = df['price'])
     plt.title('Prices of the houses')
@@ -88,10 +91,12 @@ def outlier_plots(df):
     plt.savefig(reports_folder/f"prices-{date.today()}.png")
     plt.close()
     
+def box_plot(df):    
     # Box Plot
-    f = sns.boxplot(df['price'])
-    plt.title('Boxplot of house prices (€)')
-    f.get_figure().savefig(reports_folder/f"prices_boxplot-{date.today()}.png")
+    f = sns.boxplot(x=df['price'])
+    f.set_title('Boxplot of house prices (€)')
+    plt.savefig(reports_folder/f"prices_boxplot-{date.today()}.png")
+    plt.close()
 
 def heatmap(df):
     df_encoded = pd.get_dummies(df, drop_first=True)
@@ -107,9 +112,10 @@ def heatmap(df):
 
     # Create the heatmap
     plt.figure(figsize=(12, 10))
-    f=sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
     plt.title('Correlation Heatmap of Property Data')
-    f.get_figure().savefig(reports_folder/f"corelation_heatmap-{date.today()}.png")
+    plt.savefig(reports_folder/f"corelation_heatmap-{date.today()}.png")
+    plt.close()
     
 def frequency_construction_year(df):
     # Create the plot
@@ -120,7 +126,8 @@ def frequency_construction_year(df):
     plt.ylabel("Frequency")                
     plt.grid(True, alpha=0.3, linestyle="--")     
     plt.savefig(reports_folder/f"frequency_construction_year-{date.today()}.png")
-
+    plt.close()
+    
 def average_price_per_room(df):
     # Drop rows with NaN values in 'rooms' after mapping
     df = df.dropna(subset=['Number of rooms', 'price'])
@@ -144,6 +151,7 @@ def average_price_per_room(df):
     # Show the plot
     plt.tight_layout()
     plt.savefig(reports_folder/f"average_price_per_room-{date.today()}.png")
+    plt.close()
 
 def average_price_state_building(df):
     # Define the order of categories
@@ -181,6 +189,7 @@ def average_price_state_building(df):
     # Save and show the plot
     plt.tight_layout()
     plt.savefig(reports_folder/f'average_price_by_state_building-{date.today()}.png', dpi=300)
+    plt.close()
 
 def main():
     df=pd.read_csv(data_folder/f'houses_data_{this_day}.csv')
@@ -190,6 +199,7 @@ def main():
     missing_plots(df)
     outlier_plots(df)
     heatmap(df)
+    box_plot(df)
     frequency_construction_year(df)
     average_price_per_room(df)
     average_price_state_building(df)
