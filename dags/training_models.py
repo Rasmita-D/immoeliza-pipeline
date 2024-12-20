@@ -156,8 +156,6 @@ def train():
         print(f"An unexpected error occurred: {e}")
 
 with DAG(dag_id="training_models_dag",
-         start_date=datetime(2024,12,17),
-         schedule_interval="@daily",
          catchup=False) as dag:
     
     task1 = PythonOperator(
@@ -169,12 +167,4 @@ with DAG(dag_id="training_models_dag",
         python_callable=copy_model_to_api)
     '''
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 task1
-=======
-task1
->>>>>>> 180ccc48ff4ee50fe30a2010a6466bfc12304220
-=======
-task1
->>>>>>> 180ccc48ff4ee50fe30a2010a6466bfc12304220

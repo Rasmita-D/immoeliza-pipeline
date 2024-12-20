@@ -9,6 +9,7 @@ import pandas as pd
 from pathlib import Path
 import os
 import cloudscraper
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
 # Default arguments for the DAG
 default_args = {
@@ -334,3 +335,19 @@ with DAG(
     )
 
     scrape_urls_task >> scrape_houses_task
+    
+    trigger_target = TriggerDagRunOperator(
+        task_id='trigger_cleaning',
+        trigger_dag_id='data_cleaning_training',
+        execution_date='{{ ds }}',
+        reset_dag_run=True,
+        wait_for_completion=True
+    )
+
+    trigger_target = TriggerDagRunOperator(
+        task_id='trigger_analysis_cleaning',
+        trigger_dag_id='data_cleaning_analysis',
+        execution_date='{{ ds }}',
+        reset_dag_run=True,
+        wait_for_completion=True
+    )

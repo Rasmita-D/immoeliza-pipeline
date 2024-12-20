@@ -11,6 +11,8 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from pathlib import Path
 from datetime import date
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
+
 
 this_day=date.today()
 
@@ -181,4 +183,14 @@ get_data = PythonOperator(
    dag=dag
 )
 
+
 get_data
+
+trigger_target = TriggerDagRunOperator(
+        task_id='trigger_model_creation',
+        trigger_dag_id='training_models_dag',
+        execution_date='{{ ds }}',
+        reset_dag_run=True,
+        wait_for_completion=True
+    )
+
