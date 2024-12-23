@@ -60,7 +60,7 @@ async def scrape_list_of_houses(session, url):
 # Wrapper for URL scraping
 async def scrape_urls_main():
     base_url = "https://www.immoweb.be/en/search/house-and-apartment/for-sale?countries=BE&page={page}&orderBy=relevance"
-    num_pages = 5
+    num_pages = 150
     session = Session()
     tasks = [scrape_list_of_houses(session, base_url.format(page=page)) for page in range(1, num_pages + 1)]
     await asyncio.gather(*tasks)
