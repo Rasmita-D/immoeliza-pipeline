@@ -1,0 +1,6 @@
+Number of outliers detected: 70
+On the number of 919 values
+7.62 % outliers 
+Mean value: € 431883.0
+Median value: € 325000.0
+Mode value: € 299000
