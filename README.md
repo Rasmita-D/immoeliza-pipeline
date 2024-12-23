@@ -14,11 +14,11 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 │   ├── predict.py
 │   ├── preprocess.py
 │   ├── requirements.txt
-│   ├── utils
+│   └── utils
 │   │   ├── kitchen_ordinal.pkl
 │   │   ├── one_hot.pkl
-│   │   └── state_building_ordinal.pkl
-│   └── xgboost.pkl
+│   │   ├── state_building_ordinal.pkl
+│   │   └── xgboost-{date}.pkl
 ├── streamlit
 │   ├── property.png
 │   ├── data_column_details.json
