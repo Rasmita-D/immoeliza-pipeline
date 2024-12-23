@@ -3,6 +3,7 @@
 This project explores using airflow to automate the scraping, analysis and preprocessing of house data to create a machine learning model that predicts house prices.
 
 API: https://immoeliza-pipeline-57k8.onrender.com/
+Web App: https://rasmita-d-immoeliza-pipeline-streamlitstream-lit-wylbfl.streamlit.app/
 
 ##	:building_construction: Repo Structure
 ```
@@ -77,9 +78,8 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 
 ## :chart_with_upwards_trend: Enhancements
 1. Train the model on the data scraped from the last 2 weeks instead of the last day.
-2. Fix model deployment integration.
-3. Build dashboard for the reports generated in streamlit.
-4. Push data files into the git repo.
+2. Build dashboard for the reports generated in streamlit.
+3. Push data files into the git repo.
 
 
 ## ⏱️ Timeline
