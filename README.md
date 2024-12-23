@@ -53,11 +53,11 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 │   ├── one_hot.pkl
 │   ├── state_building_ordinal.pkl
 │   └── xgboost-{date}.pkl
-├── requiremts.txt
+├── requirements.txt
 └── README.md
 ```
 
-## Our Pipeline
+## 	:gear: Our Pipeline
 ![image](https://github.com/user-attachments/assets/f1e64bd0-00a3-43f1-9bd8-8589f4d6aaf3)
 
 ## 🛎️ How to use?
@@ -71,10 +71,11 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 ![Screenshot 2024-12-23 100352](https://github.com/user-attachments/assets/2121237f-0091-45e8-a8fa-8c1c37c0386c)
 
 
-## Enhancements
+## :chart_with_upwards_trend: Enhancements
 1. Train the model on the data scraped from the last 2 weeks instead of the last day.
 2. Fix model deployment integration.
 3. Build dashboard for the reports generated in streamlit.
+4. Push data files into the git repo each day.
 
 
 ## ⏱️ Timeline
