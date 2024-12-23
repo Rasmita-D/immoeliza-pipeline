@@ -40,7 +40,10 @@ def test(raw_df):
         X_test[:,idx] = (X_test[:,idx] - mean)/stdev
   
 
-    regressor = joblib.load('utils/xgboost-{this_day}.pkl')
+    try:
+        regressor = joblib.load(f'./utils/xgboost-{this_day}.pkl')
+    except Exception as e:
+        print(f'error in loading file {e}')
     
     #print(f'\nPredicted price for your property is:{regressor.predict(X_test)}\n')
     #raw_df['price'] = regressor.predict(X_test)
