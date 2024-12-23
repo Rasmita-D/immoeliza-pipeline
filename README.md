@@ -57,6 +57,9 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 └── README.md
 ```
 
+## Our Pipeline
+![image](https://github.com/user-attachments/assets/f1e64bd0-00a3-43f1-9bd8-8589f4d6aaf3)
+
 ## 🛎️ How to use?
 
 1. Clone the repo.
