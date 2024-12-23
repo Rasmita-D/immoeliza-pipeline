@@ -75,7 +75,7 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 1. Train the model on the data scraped from the last 2 weeks instead of the last day.
 2. Fix model deployment integration.
 3. Build dashboard for the reports generated in streamlit.
-4. Push data files into the git repo each day.
+4. Push data files into the git repo.
 
 
 ## ⏱️ Timeline
