@@ -7,6 +7,7 @@ from pathlib import Path
 this_day=date.today()
 repo_root = Path(__file__).resolve().parent.parent
 api_folder= repo_root / 'api'
+utils_folder= repo_root /'utils'
 
 # GitHub repository details
 REPO_URL = 'https://github.com/Rasmita-D/immoeliza-pipeline.git'
@@ -36,8 +37,8 @@ with DAG(
             f'cd repo_dir && git checkout {BRANCH} && '
             f'git config user.name "{GIT_USER_NAME}" && '
             f'git config user.email "{GIT_USER_EMAIL}" &&'
-            f'cp {SOURCE_FILE} {TARGET_FILE} &&'
-            f'git add {TARGET_FILE} && '
+            f'cp -r {utils_folder}/. ./utils/ &&'
+            f'git add utils/ && '
             f'git commit -m "Replaced xgboost model via Airflow for the date: {this_day}" && '
             f'git push https://{GITHUB_TOKEN}@{REPO_URL.replace("https://", "")} {BRANCH}'
         ),

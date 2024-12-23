@@ -5,6 +5,10 @@ import numpy as np
 import pandas as pd
 
 import joblib
+from datetime import date
+
+
+this_day=date.today()
 
 def test(raw_df):
     clean_df = preprocess.clean_test(raw_df)
@@ -36,7 +40,7 @@ def test(raw_df):
         X_test[:,idx] = (X_test[:,idx] - mean)/stdev
   
 
-    regressor = joblib.load('xgboost.pkl')
+    regressor = joblib.load('utils/xgboost-{this_day}.pkl')
     
     #print(f'\nPredicted price for your property is:{regressor.predict(X_test)}\n')
     #raw_df['price'] = regressor.predict(X_test)
