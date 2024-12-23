@@ -37,8 +37,8 @@ with DAG(
             f'cd repo_dir && git checkout {BRANCH} && '
             f'git config user.name "{GIT_USER_NAME}" && '
             f'git config user.email "{GIT_USER_EMAIL}" &&'
-            f'cp -r {utils_folder}/. ./utils/ &&'
-            f'git add utils/ && '
+            f'cp -r {utils_folder}/. ./api/utils/ &&'
+            f'git add api/utils/ && '
             f'git commit -m "Replaced xgboost model via Airflow for the date: {this_day}" && '
             f'git push https://{GITHUB_TOKEN}@{REPO_URL.replace("https://", "")} {BRANCH}'
         ),
