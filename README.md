@@ -19,6 +19,10 @@ API: https://immoeliza-pipeline-57k8.onrender.com/
 │   │   ├── one_hot.pkl
 │   │   └── state_building_ordinal.pkl
 │   └── xgboost.pkl
+├── streamlit
+│   ├── property.png
+│   ├── data_column_details.json
+│   └── stream_lit.py
 ├── dags
 │   ├── api.py
 │   ├── data_analysis_graphs_dag.py
