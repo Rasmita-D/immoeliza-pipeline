@@ -79,8 +79,8 @@ with col3:
 
 
 json_data = json.dumps(property)
-#base_url = 'https://immoeliza-pipeline-57k8.onrender.com/'
-base_url = 'http://127.0.0.1:8000'
+base_url = 'https://immoeliza-pipeline-57k8.onrender.com/'
+#base_url = 'http://127.0.0.1:8000'
 endpoint = 'property_info'
 c0l1,col2,col3 = st.columns([10,2,10])
 col11,col21,col31 = st.columns([0.5,1,0.3])
